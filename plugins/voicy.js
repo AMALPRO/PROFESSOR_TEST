@@ -29,6 +29,7 @@ const recognizeAudio = () => {
 
 const convertToWav = file => {
     return ffmpeg(file)
+        .inputFormat('ogg')
         .audioCodec('pcm_s16le')
         .format('wav')
         .save('output.wav')
